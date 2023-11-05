@@ -1,0 +1,12 @@
+{
+  "project": {
+    "packageName": "com.byd.dct.iddm",
+    "version": "1.0.0",
+    "backendPath": "iddm",
+    "frontendPath": "iddm-ui"
+  },
+  "developer": {
+    "author": "iddm",
+    "email": "iddm4cloud@qq.com"
+  }
+}

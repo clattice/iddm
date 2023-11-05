@@ -1,0 +1,7 @@
+com.byd.dct.iddm.common.security.service.IddmUserDetailsServiceImpl
+com.byd.dct.iddm.common.security.service.IddmAppUserDetailsServiceImpl
+com.byd.dct.iddm.common.security.service.IddmRedisOAuth2AuthorizationService
+com.byd.dct.iddm.common.security.service.IddmRedisOAuth2AuthorizationConsentService
+com.byd.dct.iddm.common.security.component.IddmSecurityInnerAspect
+com.byd.dct.iddm.common.security.component.IddmSecurityMessageSourceConfiguration
+com.byd.dct.iddm.common.security.service.IddmRemoteRegisteredClientRepository

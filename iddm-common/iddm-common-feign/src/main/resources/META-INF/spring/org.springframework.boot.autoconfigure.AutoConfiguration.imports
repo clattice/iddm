@@ -1,0 +1,3 @@
+com.byd.dct.iddm.common.feign.IddmFeignAutoConfiguration
+com.byd.dct.iddm.common.feign.sentinel.SentinelAutoConfiguration
+com.byd.dct.iddm.common.feign.sentinel.handle.GlobalBizExceptionHandler

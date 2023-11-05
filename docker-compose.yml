@@ -1,0 +1,105 @@
+version: '3'
+services:
+  iddm-mysql:
+    build:
+      context: ./db
+    environment:
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
+    container_name: iddm-mysql
+    image: iddm-mysql
+    ports:
+      - 3306:3306
+    networks:
+      - spring_cloud_default
+
+  iddm-redis:
+    image: redis:7.0.0
+    ports:
+      - 6379:6379
+    restart: always
+    container_name: iddm-redis
+    hostname: iddm-redis
+    networks:
+      - spring_cloud_default
+
+  iddm-register:
+    build:
+      context: ./iddm-register
+    restart: always
+    ports:
+      - 8848:8848
+    container_name: iddm-register
+    hostname: iddm-register
+    image: iddm-register
+    networks:
+      - spring_cloud_default
+
+  iddm-gateway:
+    build:
+      context: ./iddm-gateway
+    restart: always
+    ports:
+      - 9999:9999
+    container_name: iddm-gateway
+    hostname: iddm-gateway
+    image: iddm-gateway
+    networks:
+      - spring_cloud_default
+
+  iddm-auth:
+    build:
+      context: ./iddm-auth
+    restart: always
+    container_name: iddm-auth
+    hostname: iddm-auth
+    image: iddm-auth
+    networks:
+      - spring_cloud_default
+
+  iddm-upms:
+    build:
+      context: ./iddm-upms/iddm-upms-biz
+    restart: always
+    container_name: iddm-upms
+    hostname: iddm-upms
+    image: iddm-upms
+    networks:
+      - spring_cloud_default
+
+  iddm-monitor:
+    build:
+      context: ./iddm-visual/iddm-monitor
+    restart: always
+    ports:
+      - 5001:5001
+    container_name: iddm-monitor
+    hostname: iddm-monitor
+    image: iddm-monitor
+    networks:
+      - spring_cloud_default
+
+  iddm-codegen:
+    build:
+      context: ./iddm-visual/iddm-codegen
+    restart: always
+    container_name: iddm-codegen
+    hostname: iddm-codegen
+    image: iddm-codegen
+    networks:
+      - spring_cloud_default
+
+  iddm-daemon-quartz:
+    build:
+      context: ./iddm-visual/iddm-quartz
+    restart: always
+    image: iddm-quartz
+    container_name: iddm-quartz
+    networks:
+      - spring_cloud_default
+
+networks:
+  spring_cloud_default:
+    name:  spring_cloud_default
+    driver: bridge

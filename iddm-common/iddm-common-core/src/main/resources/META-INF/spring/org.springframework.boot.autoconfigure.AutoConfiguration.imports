@@ -1,0 +1,6 @@
+com.byd.dct.iddm.common.core.config.TaskExecutorConfiguration
+com.byd.dct.iddm.common.core.config.JacksonConfiguration
+com.byd.dct.iddm.common.core.config.RedisTemplateConfiguration
+com.byd.dct.iddm.common.core.config.RestTemplateConfiguration
+com.byd.dct.iddm.common.core.util.SpringContextHolder
+com.byd.dct.iddm.common.core.config.WebMvcConfiguration
